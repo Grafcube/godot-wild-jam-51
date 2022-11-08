@@ -1,0 +1,17 @@
+# Custom Ignores
+*.tmp
+*.log
+export/
+temp/
+
+# Godot-specific ignores
+.import/
+export.cfg
+export_presets.cfg
+
+# Mono-specific ignores
+.mono/
+
+# Editor
+.vscode/
+.vs/
