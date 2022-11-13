@@ -11,7 +11,6 @@ config_version=4
 [application]
 
 config/name="godot-wild-jam-51"
-run/main_scene="res://src/player/player.tscn"
 
 [editor_plugins]
 
