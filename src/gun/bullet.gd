@@ -1,6 +1,7 @@
 extends Area2D
 
 export(int, 0, 12000) var speed := 1
+export(int) var multiplier := 1
 var direction = Vector2.ZERO
 
 
