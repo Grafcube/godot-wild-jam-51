@@ -13,6 +13,10 @@ config_version=4
 config/name="godot-wild-jam-51"
 run/main_scene="res://src/player/player.tscn"
 
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/godot-next/plugin.cfg" )
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
