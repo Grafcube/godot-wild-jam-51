@@ -29,5 +29,7 @@ func _physics_process(delta):
 
 func _on_timeout():
 	var spawned_bullet = $Bullet.create_instance()
+	remove_child(spawned_bullet)
+	get_parent().add_child(spawned_bullet)
 	spawned_bullet.global_position = self.global_position
 	spawned_bullet.direction = get_local_mouse_position()
