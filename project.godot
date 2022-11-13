@@ -10,7 +10,16 @@ config_version=4
 
 [application]
 
-config/name="godot-wild-jam-51"
+config/name="Godot Wild Jam 51"
+run/main_scene="res://src/main/main.tscn"
+config/icon="res://assets/icon.png"
+
+[display]
+
+window/size/width=1280
+window/size/height=720
+window/size/resizable=false
+window/size/borderless=true
 
 [editor_plugins]
 
