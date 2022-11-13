@@ -1,5 +1,5 @@
-# Weekly Game Jam - Week 279
+# Godot Wild Jam \#51
 
-https://itch.io/jam/weekly-game-jam-279
+<https://itch.io/jam/godot-wild-jam-51>
 
 Game Jam collab.
