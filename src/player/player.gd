@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-export(int, 0, 12000) var speed := 1
+export(int) var speed := 1
 export(int) var multiplier := 1
 
 
@@ -8,7 +8,7 @@ func _ready():
 	pass
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	var direction := Vector2.ZERO
 
 	var input_strengths: Dictionary = {
@@ -21,10 +21,10 @@ func _physics_process(delta):
 	direction = Vector2(
 		input_strengths.right - input_strengths.left, input_strengths.down - input_strengths.up
 	)
-	direction = direction.clamped(1.0)
+	direction = direction.normalized()
 
 	# warning-ignore:return_value_discarded
-	move_and_slide(direction * speed * multiplier * delta, Vector2.ZERO)
+	move_and_slide(direction * speed * multiplier, Vector2.ZERO)
 
 
 func _on_timeout():
