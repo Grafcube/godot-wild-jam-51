@@ -23,7 +23,7 @@ window/size/borderless=true
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/godot-next/plugin.cfg" )
+enabled=PoolStringArray(  )
 
 [gui]
 
