@@ -1,7 +1,6 @@
 extends KinematicBody2D
 
 export(int) var speed := 1
-export(int) var multiplier := 1
 
 
 func _ready():
@@ -24,7 +23,7 @@ func _physics_process(_delta):
 	direction = direction.normalized()
 
 	# warning-ignore:return_value_discarded
-	move_and_slide(direction * speed * multiplier, Vector2.ZERO)
+	move_and_slide(direction * speed, Vector2.ZERO)
 
 
 func _on_timeout():
