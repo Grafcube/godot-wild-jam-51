@@ -1,6 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/player/player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/enemy/enemy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/main/enemyAI.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 348 )
@@ -45,4 +47,45 @@ speed = 600
 [node name="Timer" parent="Player" index="2"]
 wait_time = 0.1
 
+[node name="Enemy0" parent="." instance=ExtResource( 2 )]
+position = Vector2( 175, 158 )
+script = ExtResource( 3 )
+
+[node name="Bullet" parent="Enemy0" index="1"]
+speed = 600
+
+[node name="Timer" parent="Enemy0" index="2"]
+wait_time = 0.1
+
+[node name="Enemy1" parent="." instance=ExtResource( 2 )]
+position = Vector2( 991, 128 )
+
+[node name="Bullet" parent="Enemy1" index="1"]
+speed = 600
+
+[node name="Timer" parent="Enemy1" index="2"]
+wait_time = 0.1
+
+[node name="Enemy2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 966, 524 )
+
+[node name="Bullet" parent="Enemy2" index="1"]
+speed = 600
+
+[node name="Timer" parent="Enemy2" index="2"]
+wait_time = 0.1
+
+[node name="Enemy3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 226, 552 )
+
+[node name="Bullet" parent="Enemy3" index="1"]
+speed = 600
+
+[node name="Timer" parent="Enemy3" index="2"]
+wait_time = 0.1
+
 [editable path="Player"]
+[editable path="Enemy0"]
+[editable path="Enemy1"]
+[editable path="Enemy2"]
+[editable path="Enemy3"]
