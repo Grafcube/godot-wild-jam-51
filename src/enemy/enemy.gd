@@ -26,10 +26,14 @@ func clear_shot():
 		fire_gun = false
 
 
+func fire():
+	var spawned_bullet = $Bullet.create_instance()
+	remove_child(spawned_bullet)
+	get_parent().add_child(spawned_bullet)
+	spawned_bullet.global_position = self.global_position
+	spawned_bullet.direction = player.global_position - self.global_position
+
+
 func _on_timeout() -> void:
 	if fire_gun:
-		var spawned_bullet = $Bullet.create_instance()
-		remove_child(spawned_bullet)
-		get_parent().add_child(spawned_bullet)
-		spawned_bullet.global_position = self.global_position
-		spawned_bullet.direction = player.global_position - self.global_position
+		fire()
