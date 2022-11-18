@@ -34,7 +34,7 @@ shape = SubResource( 3 )
 speed = 600
 
 [node name="Timer" parent="Player" index="2"]
-wait_time = 0.1
+wait_time = 0.2
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true
@@ -54,6 +54,7 @@ wait_time = 0.3
 [node name="Enemy1" parent="." instance=ExtResource( 2 )]
 position = Vector2( 984, 928 )
 script = ExtResource( 4 )
+bonus = 2
 
 [node name="Bullet" parent="Enemy1" index="1"]
 speed = 600
@@ -84,7 +85,8 @@ wait_time = 0.3
 [node name="Boss" parent="." instance=ExtResource( 2 )]
 position = Vector2( 632, 2128 )
 script = ExtResource( 7 )
-max_health = 60
+max_health = 80
+bonus = 20
 
 [node name="CollisionShape2D" parent="Boss" index="0"]
 shape = SubResource( 4 )

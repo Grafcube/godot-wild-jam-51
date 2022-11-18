@@ -3,6 +3,7 @@ extends KinematicBody2D
 
 export(int) var speed := 1
 export(int) var max_health := 1
+export(int) var bonus := 1
 
 var fire_gun := false
 
@@ -14,6 +15,7 @@ onready var player: Node = get_tree().get_nodes_in_group("player")[0]
 func _physics_process(_delta) -> void:
 	clear_shot()
 	if self.health <= 0:
+		player.attack += bonus
 		queue_free()
 	# warning-ignore:return_value_discarded
 	move_and_slide((target - self.global_position) * speed)

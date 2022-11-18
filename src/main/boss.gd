@@ -3,11 +3,12 @@ extends Enemy
 
 func _physics_process(_delta: float) -> void:
 	# Requires navigation to be completed
+	print(health)
 	pass
 
 
 func fire():
-	if health > 40:
+	if health > 60:
 		$Bullet.speed = 600
 		$Timer.wait_time = 0.2
 		stream_fire()

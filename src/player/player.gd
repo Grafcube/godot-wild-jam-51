@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 export(int) var speed := 1
 export(int) var max_health := 1
+export(int) var attack := 1
 export(float) var max_invincibility := 1.0
 
 var firing := true
@@ -52,6 +53,7 @@ func fire():
 	get_parent().add_child(spawned_bullet)
 	spawned_bullet.global_position = self.global_position
 	spawned_bullet.direction = get_local_mouse_position()
+	spawned_bullet.damage = attack
 
 
 func _on_timeout():
