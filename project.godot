@@ -13,9 +13,15 @@ _global_script_classes=[ {
 "class": "Enemy",
 "language": "GDScript",
 "path": "res://src/enemy/enemy.gd"
+}, {
+"base": "Area2D",
+"class": "Turret",
+"language": "GDScript",
+"path": "res://src/enemy/turret.gd"
 } ]
 _global_script_class_icons={
-"Enemy": ""
+"Enemy": "",
+"Turret": ""
 }
 
 [application]

@@ -13,6 +13,8 @@ script = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="Bullet" parent="." instance_placeholder="res://src/gun/bullet.tscn"]
+ignore = "mob"
+target = "player"
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
