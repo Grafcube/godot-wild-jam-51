@@ -5,7 +5,6 @@ export(int) var speed := 1
 export(int) var max_health := 1
 
 var fire_gun := false
-var invincible := false
 
 onready var health := max_health
 onready var target := self.global_position
@@ -13,7 +12,6 @@ onready var player: Node = get_tree().get_nodes_in_group("player")[0]
 
 
 func _physics_process(_delta) -> void:
-	self.invincible = false
 	clear_shot()
 	if self.health <= 0:
 		queue_free()
@@ -41,9 +39,7 @@ func fire():
 
 
 func damage(val: int):
-	if not self.invincible:
-		self.health -= val
-	self.invincible = true
+	self.health -= val
 
 
 func _on_timeout() -> void:

@@ -21,6 +21,7 @@ tile_data = PoolIntArray( 65540, 0, 7, 65541, 0, 196612, 65542, 0, 196612, 65543
 position = Vector2( 592, 304 )
 scale = Vector2( 0.5, 0.5 )
 speed = 300
+max_health = 3
 
 [node name="CollisionShape2D" parent="Player" index="0"]
 shape = SubResource( 3 )
@@ -44,7 +45,7 @@ script = ExtResource( 3 )
 speed = 600
 
 [node name="Timer" parent="Enemy0" index="2"]
-wait_time = 0.1
+wait_time = 0.3
 
 [node name="Enemy1" parent="." instance=ExtResource( 2 )]
 position = Vector2( 984, 928 )
@@ -54,7 +55,7 @@ script = ExtResource( 4 )
 speed = 600
 
 [node name="Timer" parent="Enemy1" index="2"]
-wait_time = 0.1
+wait_time = 0.3
 
 [node name="Enemy2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 272, 1088 )
@@ -64,7 +65,7 @@ script = ExtResource( 5 )
 speed = 600
 
 [node name="Timer" parent="Enemy2" index="2"]
-wait_time = 0.1
+wait_time = 0.3
 
 [node name="Enemy3" parent="." instance=ExtResource( 2 )]
 position = Vector2( 248, 1528 )
@@ -74,7 +75,7 @@ max_health = 10
 speed = 600
 
 [node name="Timer" parent="Enemy3" index="2"]
-wait_time = 0.1
+wait_time = 0.3
 
 [editable path="Player"]
 [editable path="Enemy0"]
