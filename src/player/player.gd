@@ -1,13 +1,16 @@
 extends KinematicBody2D
 
 export(int) var speed := 1
+export(int) var max_health := 1
+export(float) var invincibility_time := 1.0
 
+var invincible := false
 
-func _ready():
-	pass
+onready var health := max_health
 
 
 func _physics_process(_delta):
+	self.invincible = false
 	var direction := Vector2.ZERO
 
 	var input_strengths: Dictionary = {
@@ -24,6 +27,12 @@ func _physics_process(_delta):
 
 	# warning-ignore:return_value_discarded
 	move_and_slide(direction * speed, Vector2.ZERO)
+
+
+func damage(val: int):
+	if not self.invincible:
+		self.health -= val
+	self.invincible = true
 
 
 func _on_timeout():
