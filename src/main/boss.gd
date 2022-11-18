@@ -3,7 +3,6 @@ extends Enemy
 
 func _physics_process(_delta: float) -> void:
 	# Requires navigation to be completed
-	print(health)
 	pass
 
 
