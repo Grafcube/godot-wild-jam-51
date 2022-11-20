@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://src/player/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/enemy/enemy.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://src/main/boss.gd" type="Script" id=7]
 [ext_resource path="res://src/main/worldTimer.gd" type="Script" id=8]
 [ext_resource path="res://src/enemy/turret.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/ui/GUI.tscn" type="PackedScene" id=10]
 
 [sub_resource type="CircleShape2D" id=3]
 radius = 16.0
@@ -22,6 +23,10 @@ extents = Vector2( 8, 81 )
 
 [node name="EnemyNav" type="Navigation2D" parent="."]
 script = ExtResource( 3 )
+
+[node name="GUI" parent="." instance=ExtResource( 10 )]
+
+[node name="Navigation2D" type="Navigation2D" parent="."]
 
 [node name="TileMap" type="TileMap" parent="EnemyNav"]
 tile_set = ExtResource( 6 )
@@ -185,6 +190,9 @@ polygon = PoolVector2Array( -48, 8, -48, 16, 48, 16, 48, 8, 56, 8, 56, 24, -56, 
 
 [node name="PlayerBarrier" parent="." groups=["barrier"] instance_placeholder="res://src/main/playerBarrier.tscn"]
 position = Vector2( 576, 1800 )
+
+[node name="Turret20" parent="WorldTimer" instance=ExtResource( 9 )]
+position = Vector2( -197, 414 )
 
 [connection signal="timeout" from="WorldTimer" to="WorldTimer" method="_on_timeout"]
 [connection signal="timeout" from="WorldTimer/Timer" to="WorldTimer" method="_on_Timer_timeout"]
